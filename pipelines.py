@@ -382,7 +382,10 @@ def pipeline(
     
     if task == "e2e-qg":
         #return task_class(model=model, tokenizer=tokenizer, use_cuda=use_cuda)
+        print("Rahuram")
     elif task == "question-generation":
         #return task_class(model=model, tokenizer=tokenizer, ans_model=ans_model, ans_tokenizer=ans_tokenizer, qg_format=qg_format, use_cuda=use_cuda)
+        print("Rahu")
     else:
+        print("Muthu")
         #return task_class(model=model, tokenizer=tokenizer, ans_model=model, ans_tokenizer=tokenizer, qg_format=qg_format, use_cuda=use_cuda)
