@@ -48,6 +48,7 @@ class QGPipeline:
 
     def __call__(self, inputs: str):
         inputs = " ".join(inputs.split())
+        print(inputs)
         
         sents, answers = self._extract_answers(inputs)
         flat_answers = list(itertools.chain(*answers))
@@ -380,8 +381,8 @@ def pipeline(
                 ans_model = AutoModelForSeq2SeqLM.from_pretrained(ans_model)
     
     if task == "e2e-qg":
-        return task_class(model=model, tokenizer=tokenizer, use_cuda=use_cuda)
+        #return task_class(model=model, tokenizer=tokenizer, use_cuda=use_cuda)
     elif task == "question-generation":
         #return task_class(model=model, tokenizer=tokenizer, ans_model=ans_model, ans_tokenizer=ans_tokenizer, qg_format=qg_format, use_cuda=use_cuda)
     else:
-        return task_class(model=model, tokenizer=tokenizer, ans_model=model, ans_tokenizer=tokenizer, qg_format=qg_format, use_cuda=use_cuda)
+        #return task_class(model=model, tokenizer=tokenizer, ans_model=model, ans_tokenizer=tokenizer, qg_format=qg_format, use_cuda=use_cuda)
